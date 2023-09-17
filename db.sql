@@ -70,8 +70,9 @@ VALUES ('C', '게시판 더미데이터7', '여기는 게시판 더미데이터7
 INSERT INTO community(cate, title, content, author)
 VALUES ('D', '게시판 더미데이터8', '여기는 게시판 더미데이터8입니다', 'admin');
 
-SELECT * FROM community ORDER BY cno DESC;
-
+SELECT * FROM community;
+select cno, title from community order by resdate desc LIMIT 5;
+DELETE FROM community WHERE cno=4;
 
 -- 커뮤니티 댓글 테이블 생성
 CREATE TABLE COMMENT(
@@ -153,4 +154,5 @@ INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, 1,1);
 SELECT * FROM qna;
 
 UPDATE qna SET author='admin' WHERE qno=8;
+select qno, title from qna where lev=0 order by resdate desc LIMIT 5;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
