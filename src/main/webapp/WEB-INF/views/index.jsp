@@ -97,14 +97,14 @@
             border:2px solid #fff;
             position:absolute;
             top:10%;
-            left: 5%;
+            left: 3%;
             z-index:14;
             cursor:pointer;
             border-radius:50%;
         }
 
         .btn_box li.item2 .vs_btn {
-            left: 8%;
+            left: 4.5%;
         }
 
         .btn_box li.active .vs_btn {

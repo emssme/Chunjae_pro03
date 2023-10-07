@@ -40,7 +40,7 @@ public class QnaController {
         page.makeLastPageNum(total);
         page.makePostStart(curPage, total);
 
-        List<Qna> qnaList = qnaService.qnaList();
+        List<Qna> qnaList = qnaService.qnaList(page);
         model.addAttribute("qnaList", qnaList);     //QnA 목록
         model.addAttribute("curPage", curPage);     // 현재 페이지
         model.addAttribute("page", page);           // 페이징 데이터
@@ -122,6 +122,6 @@ public class QnaController {
         dto.setPar(Integer.parseInt(request.getParameter("par")));
         dto.setAuthor((String) session.getAttribute("sid"));
         qnaService.answerInsert(dto);
-        return "/admin/noAnswerList";
+        return "redirect:/admin/questionList.do";
     }
 }

@@ -14,18 +14,13 @@ public class QnaDAOImpl implements QnaDAO{
     private SqlSession sqlSession;
 
     @Override
-    public List<Qna> qnaList() throws Exception {
-        return sqlSession.selectList("qna.qnaList");
+    public List<Qna> qnaList(Page page) throws Exception {
+        return sqlSession.selectList("qna.qnaList",page);
     }
 
     @Override
-    public List<Qna> noAnswerList() throws Exception {
-        return sqlSession.selectList("qna.noAnswerList");
-    }
-
-    @Override
-    public List<Qna> indexQnA() throws Exception {
-        return sqlSession.selectList("qna.indexQnA");
+    public List<Qna> noAnswerList(Page page) throws Exception {
+        return sqlSession.selectList("qna.noAnswerList", page);
     }
 
     @Override
@@ -41,6 +36,11 @@ public class QnaDAOImpl implements QnaDAO{
     @Override
     public int noAnswerCount(Page page) throws Exception {
         return sqlSession.selectOne("qna.noAnswerCount", page);
+    }
+
+    @Override
+    public int noAnswerCount() throws Exception {           // 관리자 페이지에서 사용
+        return sqlSession.selectOne("qna.noAnswerCount");
     }
 
     @Override

@@ -39,17 +39,17 @@ public class HomeController {
         model.addAttribute("myName", "팀3");
 
 
-        //QnA
-        List<Qna> indexQnAList = qnaService.indexQnA();
-        model.addAttribute("indexQnAList", indexQnAList);
-
-        //Community
-        List<Community> indexComList = communityService.indexComList();
-        model.addAttribute("indexComList", indexComList);
-
-        //Notice
-        List<Notice> indexNoticeList = noticeService.indexNoticeList();
-        model.addAttribute("indexNoticeList", indexNoticeList);
+//        //QnA
+//        List<Qna> indexQnAList = qnaService.indexQnA();
+//        model.addAttribute("indexQnAList", indexQnAList);
+//
+//        //Community
+//        List<Community> indexComList = communityService.indexComList();
+//        model.addAttribute("indexComList", indexComList);
+//
+//        //Notice
+//        List<Notice> indexNoticeList = noticeService.indexNoticeList();
+//        model.addAttribute("indexNoticeList", indexNoticeList);
 
         return "/index";
     }

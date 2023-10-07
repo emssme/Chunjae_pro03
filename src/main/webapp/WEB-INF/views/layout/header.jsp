@@ -3,9 +3,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="<%=request.getContextPath() %>" />
 
-<header class="is-sticky-top bg-white border-bottom border-default" style="background-color: #333333">
-    <div class="container" style="background-color: #333333">
-        <nav class="navigation navbar" style="background-color: #333333">
+<header class="is-sticky-top bg-white border-bottom border-default" style="background-color: #19376D">
+    <div class="container" style="background-color: #19376D">
+        <nav class="navigation navbar" style="background-color: #19376D">
             <a class="navbar-brand is-inline-flex ml-0 is-align-items-center" href="${path}">
                 <img src="${path}/resources/images/tspoon_logo.png" alt="logo" width="150px">
             </a>

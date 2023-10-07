@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="<%=request.getContextPath() %>"/>
-<footer class="section-sm pb-0 border-top border-default" style="background-color: #333333">
+<footer class="section-sm pb-0 border-top border-default" style="background-color: #19376D">
     <div class="container">
         <div class="columns is-multiline is-justify-content-space-between">
             <div class="column is-3-desktop">

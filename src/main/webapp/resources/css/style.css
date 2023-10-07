@@ -210,13 +210,14 @@ a:hover {
 }
 
 .section {
-  padding-top: 100px;
   padding-bottom: 100px;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 .section-sm {
   padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #a5d7e842;
 }
 
 .bg-cover {
@@ -323,7 +324,6 @@ a:hover {
 .input {
   background-color: transparent;
   box-shadow: none !important;
-  height: calc(1.5em + 0.75rem + 2px);
 }
 .input:focus {
   outline: 0;
@@ -965,7 +965,8 @@ a:hover {
 .title-bordered {
   border: 1px solid #ddd;
   border-radius: 40px;
-  padding: 2px;
+  padding: 15px;
+  background-color: #A5D7E8;
 }
 .title-bordered h1,
 .title-bordered h2,

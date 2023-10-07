@@ -19,8 +19,8 @@
   <div class="container">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <div class="title-bordered mb-5 has-text-centered" style="background-color: #b1e4dc;>
-          <h1 class="h4">로그인</h1>
+        <div class="title-bordered mb-5 has-text-centered" >
+          <h1 class="h4"> 로그인 </h1>
         </div>
       </div>
     </div>

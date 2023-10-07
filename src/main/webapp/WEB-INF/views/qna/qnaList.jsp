@@ -42,6 +42,11 @@
 
 <div class="content" id="content">
     <div class="container" style="margin-top: 60px">
+        <c:if test='${sid eq "admin"}'>
+            <div class="button-group" style="float:right; margin-left:20px; margin-bottom: 20px">
+                <a class="button" href="${path }/qna/insert.do">글쓰기</a>
+            </div>
+        </c:if>
         <table class="table is-fullwidth is-center">
             <thead>
             <tr>
@@ -114,12 +119,6 @@
                 </c:forEach>
             </ul>
         </nav>
-            <!--회원일 경우만 글 등록 버튼 보이게-->
-        <c:if test="${ !empty sid }">
-            <div class="button-group" style="margin-top: 30px; margin-bottom: 100px;">
-                <a class="button is-primary" href="${path}/qna/questionInsert.do" style="float:right;"> 질문하기</a>
-            </div>
-        </c:if>
     </div>
 </div>
 <!-- 푸터 영영 시작 -->

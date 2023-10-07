@@ -46,7 +46,7 @@ public class AdminController {
         model.addAttribute("page", page);           // 페이징 데이터
 
         //QnaList
-        List<Qna> noAnswerList = qnaService.noAnswerList();
+        List<Qna> noAnswerList = qnaService.noAnswerList(page);
         model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
         return "/admin/noAnswerList";
     }
