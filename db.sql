@@ -144,7 +144,7 @@ CREATE TABLE qna(
                     author VARCHAR(16),   								-- 작성자
                     resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
                     lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
-                    par INT,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
+                    par INT default 0,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
                     FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
@@ -153,6 +153,56 @@ INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, 1,1);
 
 SELECT * FROM qna;
 
+DROP TABLE qna;
+
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title from qna where lev=0 order by resdate desc LIMIT 5;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
+
+-- 이벤트 글
+CREATE TABLE event (
+	eno int  PRIMARY KEY AUTO_INCREMENT,
+   title VARCHAR(100) NOT NULL,
+   content VARCHAR(1000) NOT NULL,
+   STATUS VARCHAR(5) CHECK(status IN(0, 1)),
+   sdate DATE,
+   edate DATE,
+   author VARCHAR(16),
+   regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   cnt INT DEFAULT 0 NOT NULL
+);
+
+SELECT * FROM event;
+-- 회원의 이벤트 접수
+create table apply(
+   appno int AUTO_INCREMENT PRIMARY KEY,		/* 접수 번호 */
+   eno int not NULL,									/* 이벤트글 번호 */
+   id varchar(100) not NULL,						/* 당첨자 아이디 */
+   name varchar(100) not NULL,					/* 당첨자 이름 */
+   tel varchar(13),									/* 전화번호 */
+   foreign key(eno) references event(eno) on delete cascade,
+   FOREIGN KEY(id) references member(id) on delete cascade);
+   
+   
+   -- 당첨자 리스트
+create table winnerList(
+   appno int auto_increment primary key not null,			
+   eno int not NULL,										
+   id varchar(100) not NULL,										
+   name varchar(100) not NULL,						
+   tel varchar(13),													
+   foreign key(eno) references event(eno) on delete cascade,
+   FOREIGN key(id) references member(id) on delete cascade);
+
+SELECT * FROM winnerList;
+
+--당첨자 발표 글
+create table winner(
+	wno int primary key AUTO_INCREMENT,			/* 당첨글 번호 */
+   eno int not NULL,									/* 이벤트 글 번호 */
+   title varchar(100),								/* 글 제목 */
+   content varchar(1000),							/* 글 내용 */
+   author varchar(100),								/* 작성자 */
+   resdate datetime default CURRENT_TIMESTAMP,	/* 작성일 */
+   FOREIGN key(eno) references event(eno));
+

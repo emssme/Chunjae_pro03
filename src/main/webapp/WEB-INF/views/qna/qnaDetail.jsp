@@ -36,7 +36,7 @@
     <div class="row column text-center">
         <div class="container">
             <table id="table">
-                <tobody>
+                <tbody>
                     <tr style="border-top: solid grey 1px;">
                         <td style="font-weight: bold; font-size: 30px;">${dto.title }</td>
                         <td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
@@ -50,7 +50,7 @@
                     <tr style="border-bottom: solid grey 1px;">
                         <td style="padding-top: 50px; padding-bottom: 50px;"><p>${dto.content }</p></td>
                     </tr>
-                </tobody>
+                </tbody>
             </table>
             <div class="button-group" style="margin-top: 30px; float: right; margin-bottom: 100px;">
                 <a class="button" href="${path }/qna/list.do">글 목록</a>

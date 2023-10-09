@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -13,6 +15,11 @@ public class MemberServiceImpl implements MemberService {
     private MemberDAO memberDAO;
 
     BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
+
+    @Override
+    public List<Member> memberList() throws Exception {
+        return memberDAO.memberList();
+    }
 
     @Override
     public Member getMember(String id) {
@@ -33,8 +40,8 @@ public class MemberServiceImpl implements MemberService {
     public boolean loginCheck(String id, String pw) throws Exception {
         boolean comp = false;
         Member member = memberDAO.loginCheck(id);
-        boolean loginSuccess = pwEncoder.matches(pw, member.getPw());
-        if(member!=null && loginSuccess){
+
+        if (member != null && pwEncoder.matches(pw, member.getPw())) {
             comp = true;
         } else {
             comp = false;
@@ -43,11 +50,19 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void memberEdit(Member member) throws Exception{ memberDAO.memberEdit(member); }
+    public void memberEdit(Member member) throws Exception {
+        memberDAO.memberEdit(member);
+    }
 
     @Override
-    public void memberDelete(String id) throws Exception { memberDAO.memberDelete(id);}
+    public void memberDelete(String id) throws Exception {
+        memberDAO.memberDelete(id);
+    }
 
+    @Override
+    public int memberCnt() throws Exception {
+        return memberDAO.memberCnt();
+    }
     //Ajax로 로그인 처리 -> 컨트롤러
     @Override
     public Member loginAjax(Member member) throws Exception {

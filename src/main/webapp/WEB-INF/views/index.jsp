@@ -270,7 +270,7 @@
                                     <td style="overflow: hidden">${com.title}</td>
                                 </c:if>
                                 <c:if test="${!empty sid}">
-                                    <td><a href="${path}/community/detail.do?qno=${community.cno}" style="overflow: hidden">${com.title}</a></td>
+                                    <td><a href="${path}/community/getCommunity.do?cno=${com.cno}" style="overflow: hidden">${com.title}</a></td>
                                 </c:if>
                             </tr>
                         </c:forEach>
@@ -312,10 +312,10 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- QnA -->
+                <!-- 이벤트 -->
                 <div class="column is-one-third">
                     <table class="table">
-                        <caption><a href="${path}/qna/list.do" style="color: #333333"> Q & A </a></caption>
+                        <caption><a href="${path}/event/list.do" style="color: #333333"> 이벤트 </a></caption>
                         <thead>
                         <tr>
                             <th width="5%">#</th>
@@ -323,20 +323,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${indexQnAList}" var="qna" varStatus="status">
+                        <c:forEach items="${indexEventList}" var="event" varStatus="status">
                             <tr>
                                 <td class="has-text-centered">${status.count}</td>
                                 <c:if test="${empty sid}">
-                                    <td>${qna.title}</td>
+                                    <td>${event.title}</td>
                                 </c:if>
                                 <c:if test="${!empty sid}">
-                                    <td><a href="${path}/qna/detail.do?qno=${qna.qno}">${qna.title}</a></td>
+                                    <td><a href="${path}/event/detail.do?eno=${event.eno}">${event.title}</a></td>
                                 </c:if>
                             </tr>
                         </c:forEach>
-                        <c:if test="${empty indexQnAList}">
+                        <c:if test="${empty indexEventList}">
                             <tr>
-                                <td colspan="2" class="has-text-centered"> Q&A가 없습니다. </td>
+                                <td colspan="2" class="has-text-centered"> 진행중인 이벤트가 없습니다. </td>
                             </tr>
                         </c:if>
                         </tbody>

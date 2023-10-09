@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="${path1 }/resources/plugins/slick/slick.css">
 <link rel="stylesheet" href="${path1}/resources/plugins/themify-icons/themify-icons.css">
 
+
 <!-- Main Stylesheet -->
 <link href="${path1}/resources/css/style.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>

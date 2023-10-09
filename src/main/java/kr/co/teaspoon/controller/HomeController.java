@@ -1,9 +1,8 @@
 package kr.co.teaspoon.controller;
 
-import kr.co.teaspoon.dto.Community;
-import kr.co.teaspoon.dto.Notice;
-import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.dto.*;
 import kr.co.teaspoon.service.CommunityService;
+import kr.co.teaspoon.service.EventService;
 import kr.co.teaspoon.service.NoticeService;
 import kr.co.teaspoon.service.QnaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class HomeController {
     //http:localhost:8081/pro03_war => / => /WEB-INF/views/index.jsp
 
     @Autowired
-    private QnaService qnaService;
+    private EventService eventService;
     @Autowired
     private CommunityService communityService;
     @Autowired
@@ -36,20 +35,20 @@ public class HomeController {
                 DateFormat.LONG, locale);
         String today = dateFormat.format(date);
         model.addAttribute("today", today);
-        model.addAttribute("myName", "팀3");
+        model.addAttribute("myName", "김보경");
 
 
-//        //QnA
-//        List<Qna> indexQnAList = qnaService.indexQnA();
-//        model.addAttribute("indexQnAList", indexQnAList);
-//
-//        //Community
-//        List<Community> indexComList = communityService.indexComList();
-//        model.addAttribute("indexComList", indexComList);
-//
-//        //Notice
-//        List<Notice> indexNoticeList = noticeService.indexNoticeList();
-//        model.addAttribute("indexNoticeList", indexNoticeList);
+        //event
+        List<Event> indexEventList = eventService.indexEvent();
+        model.addAttribute("indexEventList", indexEventList);
+
+        //Community
+        List<Community> indexComList = communityService.indexComList();
+        model.addAttribute("indexComList", indexComList);
+
+        //Notice
+        List<Notice> indexNoticeList = noticeService.indexNoticeList();
+        model.addAttribute("indexNoticeList", indexNoticeList);
 
         return "/index";
     }

@@ -33,8 +33,6 @@ public class FileboardController {
         private FileboardService fileboardService;
         @Autowired
         private FileInfoService fileInfoService;
-        //@Autowired를 사용하여 의존성 주입을 받고 있다.
-        // 스프링 컨테이너에서 FileboardService와 FileInfoService 빈(Bean)을 찾아서 해당 필드에 자동으로 주입해준다는 의미
 
         @RequestMapping(value = "insert.do", method = RequestMethod.GET)
         public String write() {

@@ -62,9 +62,10 @@
     </select>
 
     <!--인덱스 커뮤니티 리스트 -->
-    <select id="indexComList" resultType="kr.co.teaspoon.dto.Category">
-        select cno, title from community order by resdate desc limit 5
+    <select id="indexComList" resultType="kr.co.teaspoon.dto.Community">
+        select cno,title from community order by resdate desc limit 5
     </select>
+
 
     <!-- 게시글 상세보기 -->
     <select id="communityDetail" resultType="kr.co.teaspoon.dto.CommunityVO">

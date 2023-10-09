@@ -72,5 +72,4 @@
     <delete id="qnaDelete">
         delete from qna where qno=#{qno}
     </delete>
-
 </mapper>

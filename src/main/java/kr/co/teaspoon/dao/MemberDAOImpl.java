@@ -5,11 +5,17 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 @Repository
 public class MemberDAOImpl implements MemberDAO {
 
     @Autowired
     private SqlSession sqlSession;
+
+    @Override
+    public List<Member> memberList() throws Exception { return sqlSession.selectList("member.memberList");}
 
     @Override
     public Member getMember(String id) {
@@ -30,6 +36,10 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
     public void memberDelete(String id) throws Exception { sqlSession.delete("member.memberDelete", id); }
 
+    @Override
+    public int memberCnt() throws Exception {
+        return sqlSession.selectOne("member.memberCnt");
+    }
     @Override
     public Member loginAjax(Member member) throws Exception {
         return sqlSession.selectOne("member.login", member);

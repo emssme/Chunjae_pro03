@@ -77,13 +77,13 @@ public class MemberController {
     public String memberLoginForm(Model model) throws Exception {
         return "/member/login";
     }
-    @RequestMapping("login2.do")
-    public String memberLoginForm2(Model model) throws Exception {
-        return "/member/loginmypage";
-    }
+
     @RequestMapping(value = "loginpro.do", method = RequestMethod.POST)
-    public String memberLogin(@RequestParam String id, @RequestParam String pw, Model model) throws Exception {
+    public String memberLogin(@RequestParam String id, @RequestParam String pw, HttpServletResponse response, HttpServletRequest request, Model model) throws Exception {
         boolean ps = memberService.loginCheck(id, pw);
+        String saveId = request.getParameter("saveId");
+
+        // 로그인 성공 시
         if(ps){
             session.setAttribute("sid", id);
             return "redirect:/";
@@ -91,7 +91,10 @@ public class MemberController {
             return "redirect:login.do";
         }
     }
-
+    @RequestMapping("login2.do")
+    public String memberLoginForm2(Model model) throws Exception {
+        return "/member/loginmypage";
+    }
     @RequestMapping(value = "loginpro2.do", method = RequestMethod.POST)
     public String memberLogin2(HttpSession session, @RequestParam String pw, Model model) throws Exception {
         String id = (String) session.getAttribute("sid");

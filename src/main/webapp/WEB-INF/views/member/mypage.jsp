@@ -33,22 +33,10 @@
     <!-- 마이페이지 영역 시작 -->
     <div class="container">
         <div class="columns">
-            <!-- 사이드 메뉴바 시작 -->
-            <div class="column is-3 ">
-                <aside class="menu is-hidden-mobile">
-                    <p class="menu-label">
-                        마이페이지
-                    </p>
-                    <ul class="menu-list">
-                        <li><a class="is-active">나의정보수정</a></li>
-                    </ul>
-                 </aside>
-            </div>
-            <!-- 사이드 메뉴바 끝 -->
             <!-- 회원정보수정 영역 시작 -->
-            <div class="column is-9">
+            <div class="column">
                 <section>
-                    <div class="container" id="content">
+                    <div class="container">
                     <div class="columns is-centered">
                         <div class="column is-8-desktop">
                             <div class="has-background-white card-content shadow-down p-6">

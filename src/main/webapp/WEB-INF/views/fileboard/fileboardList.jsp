@@ -38,7 +38,6 @@
     <div class="row column text-center">
         <div class="container">
             <div>
-                <!-- 공지사항 관리자만 글쓰기 가능 처리 -->
                 <%-- <c:if test='${sid eq "admin"}'> --%>
                 <c:if test='${sid eq "admin"}'>
                 <div class="button-group" style="float:right; margin-left:20px;">

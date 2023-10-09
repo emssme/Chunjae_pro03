@@ -41,13 +41,17 @@
             <div id="navigation" class="navbar-menu">
                 <div class="navbar-end">
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <a href="${path}" class="navbar-item" style="color: #fff;">소개</a>
-                    </div>
-                    <div class="navbar-item has-dropdown is-hoverable">
                         <a href="${path}" class="navbar-item" style="color: #fff;">커뮤니티</a>
                         <div class="navbar-dropdown">
                             <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
                             <a href="${path}/fileboard/list.do" class="navbar-item">자료실</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="${path}" class="navbar-item" style="color: #fff;">이벤트</a>
+                        <div class="navbar-dropdown">
+                            <a href="${path}/event/list.do" class="navbar-item">이벤트</a>
+                            <a href="${path}/winner/list.do" class="navbar-item">당첨자 발표</a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
@@ -76,7 +80,7 @@
                             </a>
                         </c:if>
                         <c:if test="${sid ne null and sid eq 'admin'}">
-                            <a href="${path}/admin/list.do" class="button is-primary">
+                            <a href="${path}/admin/adminMemberList.do" class="button is-primary">
                                 <strong>Admin</strong>
                             </a>
                             <a href="${path}/member/logout.do" class="button is-light">

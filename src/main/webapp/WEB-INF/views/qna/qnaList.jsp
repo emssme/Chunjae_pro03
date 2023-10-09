@@ -42,7 +42,7 @@
 
 <div class="content" id="content">
     <div class="container" style="margin-top: 60px">
-        <c:if test='${sid eq "admin"}'>
+        <c:if test='${!empty sid || sid eq "admin"}'>
             <div class="button-group" style="float:right; margin-left:20px; margin-bottom: 20px">
                 <a class="button" href="${path }/qna/insert.do">글쓰기</a>
             </div>

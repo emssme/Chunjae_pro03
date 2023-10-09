@@ -35,7 +35,7 @@
 
 <form action="${path }/member/loginpro2.do" method="post" name="loginForm">
     <div class="container is-max-desktop" style="margin-top: 150px; margin-bottom: 150px">
-        <table class="table"  style="margin-left: 300px">
+        <table class="table"  style="margin-left: 320px">
             <tbody>
             <tr>
                 <p style="margin-left: 200px;margin-bottom: 30px"> <strong style="font-size: 26px; font-weight: bold;">보안을 위해 비밀번호를 다시 한번 입력 해주세요.</strong></p>
